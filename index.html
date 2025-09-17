@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Oportunidades - Seu Mentor Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+        
+        .features {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .features-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .how-it-works {
+            background: #f8f9ff;
+            padding: 4rem 2rem;
+        }
+        
+        .steps {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .steps h2 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .step {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .testimonials {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonials h2 {
+            color: #667eea;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .testimonial {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🌟 Hub de Oportunidades</h1>
+            <p>Seu mentor digital para descobrir caminhos educacionais e profissionais que você nem imaginava existir</p>
+            <a href="#chat" class="cta-button">✨ Conversar com meu Mentor Agora</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-container">
+            <div class="feature">
+                <div class="feature-icon">🔍</div>
+                <h3>Descubra seus Talentos</h3>
+                <p>Através de perguntas simples, nosso mentor identifica suas habilidades únicas e interesses verdadeiros</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Conexões Não Óbvias</h3>
+                <p>Mostramos caminhos profissionais que conectam seus hobbies a carreiras reais, de forma criativa</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Oportunidades Reais</h3>
+                <p>Cursos gratuitos, bolsas de estudo e programas de capacitação disponíveis no Brasil</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="steps">
+            <h2>Como Funciona?</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Conte seus Interesses</h3>
+                <p>Fale sobre o que você gosta de fazer, mesmo que pareça só um hobby</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Nosso Mentor Analisa</h3>
+                <p>Identificamos as habilidades por trás dos seus gostos e fazemos conexões criativas</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Receba Sugestões</h3>
+                <p>Apresentamos 2-3 caminhos educacionais com justificativas claras e links diretos</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Comece sua Jornada</h3>
+                <p>Acesse cursos, inscreva-se em programas e transforme sua paixão em carreira</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2>O que as Pessoas Dizem</h2>
+            
+            <div class="testimonial">
+                "Nunca imaginei que meu gosto por desmontar coisas poderia me levar à luthieria! Hoje estou fazendo um curso gratuito e já construí meu primeiro violão."
+                <br><strong>- Maria, São Paulo</strong>
+            </div>
+            
+            <div class="testimonial">
+                "Descobri que minha paixão por fotografar comida tinha conexão com styling e direção de arte. O mentor me mostrou um mundo que eu não conhecia!"
+                <br><strong>- João, Rio de Janeiro</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="chat" style="padding: 4rem 2rem; background: #f8f9ff; text-align: center;">
+        <h2 style="color: #667eea; margin-bottom: 2rem;">Pronto para Descobrir suas Oportunidades?</h2>
+        <div style="background: white; max-width: 600px; margin: 0 auto; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <p style="margin-bottom: 1rem; font-size: 1.1rem;">🤖 <strong>Mentor de Oportunidades:</strong></p>
+            <p style="background: #f0f0f0; padding: 1rem; border-radius: 10px; margin-bottom: 2rem;">
+                "Olá! Eu sou seu Mentor de Oportunidades. Para começarmos, me conte: o que você gosta de fazer no seu tempo livre, mesmo que pareça só um hobby?"
+            </p>
+            <textarea placeholder="Digite aqui o que você gosta de fazer..." style="width: 100%; height: 100px; padding: 1rem; border: 2px solid #667eea; border-radius: 10px; font-size: 1rem; resize: vertical;"></textarea>
+            <br><br>
+            <button class="cta-button" style="margin: 0;">Enviar Resposta</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Hub de Oportunidades - Democratizando o acesso à educação no Brasil 🇧🇷</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Feito com ❤️ para transformar vidas</p>
+    </footer>
+</body>
+</html>
