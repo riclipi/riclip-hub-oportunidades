@@ -12,7 +12,7 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
         }
@@ -28,8 +28,9 @@
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            width: 100%;
         }
         
         .hero h1 {
@@ -45,47 +46,23 @@
             animation: fadeInUp 1s ease-out 0.3s both;
         }
         
-        .cta-button {
-            background: #ff6b6b;
-            color: white;
-            padding: 1rem 3rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
             animation: fadeInUp 1s ease-out 0.6s both;
         }
         
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        }
-        
-        .features {
-            padding: 4rem 2rem;
-            background: white;
-        }
-        
-        .features-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        
-        .feature {
-            text-align: center;
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
         
-        .feature:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
         }
         
@@ -94,80 +71,157 @@
             margin-bottom: 1rem;
         }
         
-        .feature h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
         
-        .how-it-works {
-            background: #f8f9ff;
-            padding: 4rem 2rem;
-        }
-        
-        .steps {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .steps h2 {
-            color: #667eea;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .step {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-        }
-        
-        .step-number {
-            background: #667eea;
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-weight: bold;
+            animation: fadeInUp 1s ease-out 0.9s both;
         }
         
-        .testimonials {
-            padding: 4rem 2rem;
-            background: white;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
         
-        .testimonials-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+        .chat-container {
+            display: none;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem;
         }
         
-        .testimonials h2 {
-            color: #667eea;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-        
-        .testimonial {
-            background: #f8f9ff;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        
-        .footer {
-            background: #333;
+        .chat-header {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 20px 20px 0 0;
             color: white;
-            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .chat-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .chat-messages {
+            background: white;
             padding: 2rem;
+            max-height: calc(100vh - 280px);
+            overflow-y: auto;
+            margin: 0;
+        }
+        
+        .message {
+            margin-bottom: 1.5rem;
+            display: flex;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-content {
+            max-width: 80%;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .message.assistant .message-content {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .loading {
+            display: none;
+            justify-content: flex-start;
+        }
+        
+        .loading .message-content {
+            background: #f0f0f0;
+            padding: 1rem 1.5rem;
+        }
+        
+        .loading-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .loading-dots div {
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        
+        .loading-dots div:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dots div:nth-child(2) { animation-delay: -0.16s; }
+        
+        .chat-input-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0 0 20px 20px;
+            margin-top: 0;
+        }
+        
+        .chat-input-wrapper {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            resize: none;
+            font-family: inherit;
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .send-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .send-button:hover:not(:disabled) {
+            transform: scale(1.05);
+        }
+        
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
         @keyframes fadeInUp {
@@ -181,115 +235,190 @@
             }
         }
         
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .cta-button {
-                padding: 0.8rem 2rem;
-                font-size: 1.1rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.2rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .message-content { max-width: 90%; }
+            .chat-input-wrapper { flex-direction: column; }
+            .send-button { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <section class="hero">
+    <!-- Hero Section -->
+    <div id="hero" class="hero">
         <div class="hero-content">
             <h1>🌟 Hub de Oportunidades</h1>
             <p>Seu mentor digital para descobrir caminhos educacionais e profissionais que você nem imaginava existir</p>
-            <a href="#chat" class="cta-button">✨ Conversar com meu Mentor Agora</a>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="features-container">
-            <div class="feature">
-                <div class="feature-icon">🔍</div>
-                <h3>Descubra seus Talentos</h3>
-                <p>Através de perguntas simples, nosso mentor identifica suas habilidades únicas e interesses verdadeiros</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Descubra seus Talentos</h3>
+                    <p>Identificamos suas habilidades únicas através de perguntas simples</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Conexões Criativas</h3>
+                    <p>Mostramos caminhos que conectam seus hobbies a carreiras reais</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Oportunidades Reais</h3>
+                    <p>Cursos gratuitos e bolsas disponíveis no Brasil</p>
+                </div>
             </div>
             
-            <div class="feature">
-                <div class="feature-icon">🎯</div>
-                <h3>Conexões Não Óbvias</h3>
-                <p>Mostramos caminhos profissionais que conectam seus hobbies a carreiras reais, de forma criativa</p>
-            </div>
+            <button class="cta-button" onclick="startChat()">
+                ✨ Começar Conversa com o Mentor - 100% Gratuito!
+            </button>
             
-            <div class="feature">
-                <div class="feature-icon">🚀</div>
-                <h3>Oportunidades Reais</h3>
-                <p>Cursos gratuitos, bolsas de estudo e programas de capacitação disponíveis no Brasil</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works">
-        <div class="steps">
-            <h2>Como Funciona?</h2>
-            
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Conte seus Interesses</h3>
-                <p>Fale sobre o que você gosta de fazer, mesmo que pareça só um hobby</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Nosso Mentor Analisa</h3>
-                <p>Identificamos as habilidades por trás dos seus gostos e fazemos conexões criativas</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Receba Sugestões</h3>
-                <p>Apresentamos 2-3 caminhos educacionais com justificativas claras e links diretos</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Comece sua Jornada</h3>
-                <p>Acesse cursos, inscreva-se em programas e transforme sua paixão em carreira</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="testimonials-container">
-            <h2>O que as Pessoas Dizem</h2>
-            
-            <div class="testimonial">
-                "Nunca imaginei que meu gosto por desmontar coisas poderia me levar à luthieria! Hoje estou fazendo um curso gratuito e já construí meu primeiro violão."
-                <br><strong>- Maria, São Paulo</strong>
-            </div>
-            
-            <div class="testimonial">
-                "Descobri que minha paixão por fotografar comida tinha conexão com styling e direção de arte. O mentor me mostrou um mundo que eu não conhecia!"
-                <br><strong>- João, Rio de Janeiro</strong>
-            </div>
-        </div>
-    </section>
-
-    <section id="chat" style="padding: 4rem 2rem; background: #f8f9ff; text-align: center;">
-        <h2 style="color: #667eea; margin-bottom: 2rem;">Pronto para Descobrir suas Oportunidades?</h2>
-        <div style="background: white; max-width: 600px; margin: 0 auto; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-            <p style="margin-bottom: 1rem; font-size: 1.1rem;">🤖 <strong>Mentor de Oportunidades:</strong></p>
-            <p style="background: #f0f0f0; padding: 1rem; border-radius: 10px; margin-bottom: 2rem;">
-                "Olá! Eu sou seu Mentor de Oportunidades. Para começarmos, me conte: o que você gosta de fazer no seu tempo livre, mesmo que pareça só um hobby?"
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+                🇧🇷 Democratizando o acesso à educação no Brasil
             </p>
-            <textarea placeholder="Digite aqui o que você gosta de fazer..." style="width: 100%; height: 100px; padding: 1rem; border: 2px solid #667eea; border-radius: 10px; font-size: 1rem; resize: vertical;"></textarea>
-            <br><br>
-            <button class="cta-button" style="margin: 0;">Enviar Resposta</button>
         </div>
-    </section>
+    </div>
 
-    <footer class="footer">
-        <p>&copy; 2024 Hub de Oportunidades - Democratizando o acesso à educação no Brasil 🇧🇷</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">Feito com ❤️ para transformar vidas</p>
-    </footer>
+    <!-- Chat Container -->
+    <div id="chatContainer" class="chat-container">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="chat-header">
+                <h2>✨ Mentor de Oportunidades</h2>
+                <p style="opacity: 0.9;">Descubra seu caminho profissional!</p>
+            </div>
+            
+            <div class="chat-messages" id="messages"></div>
+            
+            <div class="loading" id="loading">
+                <div class="message-content">
+                    <div class="loading-dots">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea 
+                        id="userInput" 
+                        class="chat-input" 
+                        placeholder="Digite sua mensagem..."
+                        rows="2"
+                        onkeypress="handleKeyPress(event)"
+                    ></textarea>
+                    <button class="send-button" onclick="sendMessage()">
+                        📤
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let conversationHistory = [];
+
+        function startChat() {
+            document.getElementById('hero').style.display = 'none';
+            document.getElementById('chatContainer').style.display = 'block';
+            
+            // Mensagem inicial do mentor
+            addMessage('assistant', '✨ Olá! Eu sou seu Mentor de Oportunidades! 🚀\n\nEstou aqui para te ajudar a descobrir caminhos educacionais e profissionais incríveis, conectando suas paixões a oportunidades reais no Brasil.\n\n💭 Para começarmos, me conte: **o que você gosta de fazer no seu tempo livre?** Pode ser qualquer coisa - um hobby, algo que você curte assistir, fazer, estudar... Não existe resposta errada!');
+        }
+
+        function addMessage(role, content) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.textContent = content;
+            
+            messageDiv.appendChild(contentDiv);
+            messagesDiv.appendChild(messageDiv);
+            
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            
+            conversationHistory.push({ role, content });
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Adiciona mensagem do usuário
+            addMessage('user', message);
+            input.value = '';
+            
+            // Mostra loading
+            document.getElementById('loading').style.display = 'flex';
+            
+            // Desabilita input e botão
+            input.disabled = true;
+            document.querySelector('.send-button').disabled = true;
+            
+            try {
+                // Chama a API do backend (que vai esconder a chave do Google)
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: message,
+                        history: conversationHistory
+                    })
+                });
+
+                const data = await response.json();
+                
+                // Esconde loading
+                document.getElementById('loading').style.display = 'none';
+                
+                if (data.response) {
+                    addMessage('assistant', data.response);
+                } else {
+                    throw new Error('Resposta inválida do servidor');
+                }
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('loading').style.display = 'none';
+                addMessage('assistant', '😅 Ops! Tive um problema para responder. Pode tentar novamente em alguns segundos?');
+            } finally {
+                // Reabilita input e botão
+                input.disabled = false;
+                document.querySelector('.send-button').disabled = false;
+                input.focus();
+            }
+        }
+    </script>
 </body>
 </html>
