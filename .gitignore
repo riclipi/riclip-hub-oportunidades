@@ -1,0 +1,17 @@
+# Arquivo .gitignore
+# Coloque este arquivo na raiz do projeto
+
+# Variáveis de ambiente (senhas e chaves)
+.env
+.env.local
+.env*.local
+
+# Dependências do Node
+node_modules/
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
